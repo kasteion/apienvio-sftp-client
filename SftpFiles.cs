@@ -33,10 +33,10 @@ namespace apienvio_sync
         }
 
 
-        public static void downloadFile(string server, string user, string password, string fileName)
+        public static void downloadFile(string server, string user, string password, string fileName, string localPath)
         {
             var pathRemoteFile = @"/" + fileName;
-            var pathLocalFile = Path.Combine(@"C:\inetpub\wwwroot\APIEnvioFacturas\Reportes", fileName);
+            var pathLocalFile = Path.Combine(localPath, fileName);
             using (var sftp = new SftpClient(server, user, password))
             {
                 try
@@ -56,10 +56,10 @@ namespace apienvio_sync
             }
         }
 
-        public static void uploadFile(string server, string user, string password, string fileName)
+        public static void uploadFile(string server, string user, string password, string fileName, string localPath)
         {
             var pathRemoteFile = @"/" + fileName;
-            var pathLocalFile = Path.Combine(@"C:\inetpub\wwwroot\APIEnvioFacturas\Reportes", fileName);
+            var pathLocalFile = Path.Combine(localPath, fileName);
             using (var sftp = new SftpClient(server, user, password))
             {
                 try

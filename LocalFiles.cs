@@ -8,9 +8,8 @@ namespace apienvio_sync
     public class LocalFiles
     {
 
-        public static List<string> list()
+        public static List<string> list(string docPath)
         {
-            string docPath = @"C:\inetpub\wwwroot\APIEnvioFacturas\Reportes";
             var files = Directory.EnumerateFiles(docPath);
             var list = new List<string>();
             foreach (var file in files)

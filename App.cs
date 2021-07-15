@@ -19,6 +19,7 @@ namespace apienvio_sync
             var server = _config.GetConnectionString("server");
             var user = _config.GetConnectionString("user");
             var password = _config.GetConnectionString("password");
+            var localPath = _config.GetSection("localpath").Value;
 
             List<string> remoteFiles = SftpFiles.list(server, user, password);
             Dictionary<string, int> Synced = new Dictionary<string, int>();
@@ -26,7 +27,7 @@ namespace apienvio_sync
             {
                 Synced.Add(file, 0);
             }
-            List<string> localFiles = LocalFiles.list();
+            List<string> localFiles = LocalFiles.list(localPath);
             foreach (var file in localFiles)
             {
                 if (Synced.ContainsKey(file))
@@ -44,14 +45,14 @@ namespace apienvio_sync
                 {
                     case 0:
                         Console.WriteLine(file.Key + " exists in server but not in client, i will download it.");
-                        SftpFiles.downloadFile(server, user, password, file.Key);
+                        SftpFiles.downloadFile(server, user, password, file.Key, localPath);
                         break;
                     case 1:
                         Console.WriteLine(file.Key + " is synced - nothing to do");
                         break;
                     case 2:
                         Console.WriteLine(file.Key + " exist in client but not in server, i will upload it.");
-                        SftpFiles.uploadFile(server, user, password, file.Key);
+                        SftpFiles.uploadFile(server, user, password, file.Key, localPath);
                         break;
                 }
             }
