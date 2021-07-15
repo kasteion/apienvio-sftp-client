@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "apienvio-sync", "apienvio-sync.csproj", "{3DE9CD5D-6177-4AE4-B47D-21C953FD323A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3DE9CD5D-6177-4AE4-B47D-21C953FD323A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DE9CD5D-6177-4AE4-B47D-21C953FD323A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DE9CD5D-6177-4AE4-B47D-21C953FD323A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DE9CD5D-6177-4AE4-B47D-21C953FD323A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {792A16E2-0673-48CD-A718-C0E865F40979}
+	EndGlobalSection
+EndGlobal
